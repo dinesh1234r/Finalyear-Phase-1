@@ -74,7 +74,7 @@ function PatientHistory() {
         const fetchhistory=async()=>{
             try{
                 const _id=JSON.parse(localStorage.getItem('patient'))._id;
-                const response=await axios.post('https://medivault.onrender.com/patient/history',{_id})
+                const response=await axios.post('https://finalyear-phase-1-backend.onrender.com/patient/history',{_id})
                 if(response.data.msg==="History received")
                 {
                     const result=response.data.result.reverse();
@@ -123,7 +123,7 @@ function PatientHistory() {
     const savingnotes=async()=>{
         try{
             const _id=JSON.parse(localStorage.getItem('patient'))._id;
-            const response=await axios.post('https://medivault.onrender.com/patient/notesadded',{_id,notes})
+            const response=await axios.post('https://finalyear-phase-1-backend.onrender.com/patient/notesadded',{_id,notes})
             if(response.data.msg==="Notes added successfully")
             {
                 toast({
@@ -221,7 +221,7 @@ function PatientHistory() {
         try{
             const _id=JSON.parse(localStorage.getItem('patient'))._id
             const Doctor=jwtDecode(JSON.stringify(localStorage.getItem('Jwt'))).user;
-            const response=await axios.post('https://medivault.onrender.com/patient/updateprecription',{_id,preciption,Doctor})
+            const response=await axios.post('https://finalyear-phase-1-backend.onrender.com/patient/updateprecription',{_id,preciption,Doctor})
             if(response.data.msg==="Precription added successfully")
             {
                 toast({

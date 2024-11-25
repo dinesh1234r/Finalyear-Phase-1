@@ -18,7 +18,7 @@ function Patientlog() {
     useEffect(()=>{
         const fetchdetails=async()=>{
             const _id=JSON.parse(localStorage.getItem('patient'))._id
-            const response=await axios.post('https://medivault.onrender.com/patient/entryreport',{_id})
+            const response=await axios.post('https://finalyear-phase-1-backend.onrender.com/patient/entryreport',{_id})
             if(response.data.msg==="Entry Accepted")
             {
                 Settoday(response.data.result);
@@ -109,7 +109,7 @@ function Patientlog() {
     const handlereport=async()=>{
         try{
             const _id=JSON.parse(localStorage.getItem('patient'))._id
-            const response=await axios.post('https://medivault.onrender.com/patient/updatereport',{_id,report:saving})
+            const response=await axios.post('https://finalyear-phase-1-backend.onrender.com/patient/updatereport',{_id,report:saving})
             if(response.data.msg==="Report Added successfully")
             {
                 toast({

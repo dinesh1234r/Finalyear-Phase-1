@@ -17,7 +17,7 @@ function Login() {
     SetisLoading(true);
     try{
       const {username,password}=values;
-      await axios.post("https://medivault.onrender.com/nurse/login",{username,password})
+      await axios.post("https://finalyear-phase-1-backend.onrender.com/nurse/login",{username,password})
       .then((res)=>{
         if(res.data.msg==="Username Found")
         {

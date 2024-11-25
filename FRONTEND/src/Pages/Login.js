@@ -35,7 +35,7 @@ const LoginForm = () => {
   const toast=useToast();
   const handlesubmit=async()=>{
     SetisLoading(true);
-    const response=await axios.post('https://medivault.onrender.com/admin/login',{adminuser,password});
+    const response=await axios.post('https://finalyear-phase-1-backend.onrender.com/admin/login',{adminuser,password});
     if(response.data.msg==='Login successful')
     {
         localStorage.setItem('jwt',response.data.token);
