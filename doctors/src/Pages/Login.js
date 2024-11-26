@@ -7,7 +7,7 @@ function Login() {
   const toast=useToast();
   const navigate=useNavigate();
   const [isLoading,SetisLoading]=useState(false);
-  const [values,Setvalues]=useState({username:"",password:""});
+  const [values,Setvalues]=useState({username:"doctor@gmail.com",password:"mec036"});
 
   const handleChange=(e)=>{
     Setvalues({...values,[e.target.name]:e.target.value})
