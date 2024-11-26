@@ -29,8 +29,8 @@ const LoginForm = () => {
   },[])
   let check=true;
   const [isLoading,SetisLoading] =useState(false);
-  const [adminuser,Setadminuser]=useState("");
-  const [password,SetPassword]=useState("");
+  const [adminuser,Setadminuser]=useState("Admin");
+  const [password,SetPassword]=useState("Admin123");
   const navigate=useNavigate();
   const toast=useToast();
   const handlesubmit=async()=>{
@@ -75,13 +75,13 @@ const LoginForm = () => {
           <FormLabel color={'teal'}>
             Username:
           </FormLabel>
-          <Input boxShadow={'md'} type='username' onChange={(e)=>Setadminuser(e.target.value)}/>
+          <Input boxShadow={'md'} type='username' value={adminuser} onChange={(e)=>Setadminuser(e.target.value)}/>
           </FormControl>
           <FormControl id='password' isRequired>
           <FormLabel color={'teal'}>
             Password
           </FormLabel>
-          <Input  boxShadow={'md'} type='password' onChange={(e)=>SetPassword(e.target.value)}/>
+          <Input  boxShadow={'md'} type='password' value={password} onChange={(e)=>SetPassword(e.target.value)}/>
           </FormControl>
           <Button colorScheme={'teal'} onClick={handlesubmit} isLoading={isLoading} loadingText='Logging'>
             Login
